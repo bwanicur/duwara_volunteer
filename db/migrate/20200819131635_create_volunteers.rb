@@ -7,6 +7,7 @@ class CreateVolunteers < ActiveRecord::Migration[6.0]
       t.string :phone
       t.string :info
       t.boolean :active, default: true, null: false
+      t.boolean :receive_emails, default: true, null: false
 
       t.timestamps
     end

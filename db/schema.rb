@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_132040) do
     t.string "invite_hash", null: false
     t.boolean "response"
     t.datetime "last_replied_on"
+    t.boolean "attended", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_id", "volunteer_id"], name: "event_volunteer_mem_idx", unique: true
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_132040) do
     t.string "phone"
     t.string "info"
     t.boolean "active", default: true, null: false
+    t.boolean "receive_emails", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_volunteers_on_email", unique: true

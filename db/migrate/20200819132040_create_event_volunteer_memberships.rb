@@ -6,6 +6,7 @@ class CreateEventVolunteerMemberships < ActiveRecord::Migration[6.0]
       t.string :invite_hash, null: false
       t.boolean :response
       t.datetime :last_replied_on
+      t.boolean :attended, default: true, null: false
 
       t.timestamps
     end
