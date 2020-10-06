@@ -15,28 +15,20 @@ ActiveRecord::Schema.define(version: 2020_08_19_132040) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "event_volunteer_memberships", force: :cascade do |t|
-    t.integer "event_id", null: false
-    t.integer "volunteer_id", null: false
-    t.string "invite_hash", null: false
-    t.boolean "response"
-    t.datetime "last_replied_on"
-    t.boolean "attended", default: true, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id", "volunteer_id"], name: "event_volunteer_mem_idx", unique: true
-  end
+# Could not dump table "event_volunteer_memberships" because of following StandardError
+#   Unknown type 'response_enum' for column 'response'
 
   create_table "events", force: :cascade do |t|
     t.string "title", null: false
-    t.string "description"
     t.datetime "start_time", null: false
     t.datetime "end_time"
+    t.string "description"
     t.string "address1"
     t.string "address2"
     t.string "city"
     t.string "state"
     t.string "zipcode"
+    t.integer "max_volunteers"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
